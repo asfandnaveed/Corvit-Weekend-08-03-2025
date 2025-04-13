@@ -10,8 +10,23 @@ body{
 }
 .heading{
     font-size: 4.2rem;
-    color: white;
+    color: rgba(255, 255, 255, 0.7);
 }
 .left-side{
     height: 75vh;
+}
+.btn-location{
+    border-top-left-radius:4rem ;
+    border-bottom-left-radius: 4rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+.btn-search{
+    width: 35px;
+    height: 35px;
+    background-color: #C97303;
+    border-radius: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
