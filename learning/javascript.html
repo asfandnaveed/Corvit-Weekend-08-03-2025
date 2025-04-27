@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  </head>
+  <body>
+
+    
+
+    <h1 id="heading">Welcome to JavaScript</h1>
+    <input id="colorPick" type="color" class="form-control form-control-color" >
+    <button class="btn btn-warning" onclick="changText();">Change</button>
+    
+
+    <h1 id="showHide">Show Hide Text</h1>
+    <button class="btn btn-danger" onclick="showHideText();">Click to Hide/Show</button>
+
+    <h1 id="age_heading"></h1>
+    <input id="age" type="number" class="form-control w-25" placeholder="Enter Age">
+    <button onclick="checkAge();" class="btn btn-info">Check Age</button>
+
+    <script>
+        function changText (){
+            let color = document.getElementById('colorPick').value;
+            
+            document.getElementById('heading').style.color = color;
+            
+        }
+
+        function showHideText(){
+
+            let showHideText = document.getElementById('showHide');
+
+            if(showHideText.style.display == 'none'){
+                showHideText.style.display = 'block';
+            }else{
+                showHideText.style.display = 'none';
+            }
+            
+        }
+
+
+        function checkAge(){
+            let age = document.getElementById('age').value;
+
+            
+            if(age > 35){
+                document.getElementById('age_heading').innerHTML = "You Are Old !!";
+            }else{
+                document.getElementById('age_heading').innerHTML = "You Are Young !!";
+            }
+        }
+
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  </body>
+</html>
