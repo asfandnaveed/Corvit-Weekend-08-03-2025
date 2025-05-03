@@ -46,12 +46,12 @@
 
         function checkAge(){
             let age = document.getElementById('age').value;
-
+            let age_heading = document.getElementById('age_heading');
             
             if(age > 35){
-                document.getElementById('age_heading').innerHTML = "You Are Old !!";
+                age_heading.innerHTML = "You Are Old !!";
             }else{
-                document.getElementById('age_heading').innerHTML = "You Are Young !!";
+                age_heading.innerHTML = "You Are Young !!";
             }
         }
 
