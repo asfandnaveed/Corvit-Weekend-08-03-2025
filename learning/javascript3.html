@@ -22,10 +22,10 @@
                 <p id="question" class="fw-bold">What is the capital of Pakistan?</p>
 
                 <div class="d-grid gap-2">
-                    <button class="btn btn-outline-primary">Karachi</button>
-                    <button class="btn btn-outline-primary">Lahore</button>
-                    <button class="btn btn-outline-primary">Islamabad</button>
-                    <button class="btn btn-outline-primary">Multan</button>
+                    <button class="btn btn-outline-primary" onclick="check('Karachi');">Karachi</button>
+                    <button class="btn btn-outline-primary" onclick="check('Lahore');">Lahore</button>
+                    <button class="btn btn-outline-primary" onclick="check('Islamabad');">Islamabad</button>
+                    <button class="btn btn-outline-primary" onclick="check('Multan');">Multan</button>
                 </div>
 
                 <div id="result" class="mt-4 fw-semibold"></div>
@@ -33,6 +33,22 @@
         </div>
     </div>
 
+    <script>
+        function check(data){
+            let result = document.getElementById('result');
+
+            // if(data == "Islamabad"){
+            //     result.innerHTML = '<div class="alert alert-success">Correct Answer !!</div>';
+            // }else{
+            //     result.innerHTML = '<div class="alert alert-danger">Wrong Answer !!</div>';
+
+            // }
+
+            result.innerHTML = data=='Islamabad' ? 'Correct Answer'  : 'Wrong Answer';
+            
+        }
+       
+    </script>
 
 
 

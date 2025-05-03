@@ -10,19 +10,59 @@
   <body>
 
     <input type="password" id="pass_input" class="form-control w-25" placeholder="Enter Password">
-    <i class="bi bi-eye" onclick="showHidePass();"></i>
+    <i id="icon" class="bi bi-eye" onclick="showHidePass();"></i>
+
+    <h1 id="clock"></h1>
+
+    <div id="value"></div>
+    <button class="btn btn-warning" onclick="showValue();">Click Me</button>
 
 
     <script>
         function showHidePass(){
             let pass_input = document.getElementById('pass_input');
+            let icon = document.getElementById('icon');
 
             if (pass_input.type == 'text'){
                 pass_input.type = 'password';
+                icon.classList.remove('bi-eye-slash');
+                icon.classList.add('bi-eye');
+
             }else{
                 pass_input.type = 'text';
+                icon.classList.remove('bi-eye');
+                icon.classList.add('bi-eye-slash');
             }
         }
+
+
+        function startClock(){
+          let clock =new Date();
+          document.getElementById('clock').innerHTML = clock.toLocaleTimeString();
+        }
+
+
+
+        setInterval(startClock, 1000);
+
+        function showValue (){
+
+          let menu = [
+            "Pizza",
+            "Burger",
+            "Pasta",
+            "Fries",
+            "Lasagnia",
+            "Sushii"
+          ];
+
+
+          document.getElementById('value').innerHTML = menu[6] ; 
+
+        }
+
+
+
     </script>
 
     
