@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javacript</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <input class="form-control" type="text" id="nameInput" placeholder="Enter Name">
+            </div>
+            <div class="col-4">
+                <input class="form-control" type="email" id="emailInput" placeholder="Enter Email">
+            </div>
+            <div class="col-4">
+                <input class="form-control" type="number" id="numberInput" placeholder="Enter Phone Number">
+            </div>
+            <div class="col-12">
+                <button class="btn btn-success" onclick="TableData();">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-dark" id="tbl">
+
+    </table>
+
+
+
+    <script>
+
+        let username = [];
+        let email = [];
+        let phoneNumber = [];
+
+        function TableData() {
+            const nameInput = document.getElementById('nameInput').value;
+            const emailInput = document.getElementById('emailInput').value;
+            const numberInput = document.getElementById('numberInput').value;
+
+            // Save the data
+            username.push(nameInput);
+            email.push(emailInput);
+            phoneNumber.push(numberInput);
+
+            // Rebuild the table from scratch
+            renderTable();
+
+            // Clear input fields
+            document.getElementById('nameInput').value = "";
+            document.getElementById('emailInput').value = "";
+            document.getElementById('numberInput').value = "";
+        }
+
+
+
+        function renderTable() {
+            const table = document.getElementById('tbl');
+            table.innerHTML = `
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        
+                    </tr>
+                
+            `;
+
+            for (let x = 0; x < username.length; x++) {
+                table.innerHTML += `
+                    <tr>
+                        <td>${username[x]}</td>
+                        <td>${email[x]}</td>
+                        <td>${phoneNumber[x]}</td>
+                        
+                    </tr>
+                `;
+            }
+        }
+
+       
+
+
+       
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+
+
+
+</body>
+
+</html>
