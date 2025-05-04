@@ -62,9 +62,16 @@
 
             let list = document.getElementById('list');
 
-            for (let x = 0; x < menu.length; x++) {
-                list.innerHTML += '<li>'+menu[x]+'</li>'
-             }
+            // for (let x = 0; x < menu.length; x++) {
+            //     list.innerHTML += '<li>'+menu[x]+'</li>'
+            //  }
+
+            menu.map(food=>{
+                list.innerHTML += `<li>${food}</li>`;
+            });
+
+
+
         }
 
 
