@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 
 function Weather(){
 
+    const [weather , setWeather] = useState(null);
+
+    useEffect(()=>{
+        fetch('http://api.weatherapi.com/v1/current.json?q=Lahore&key=43297bb031ed4a1898b51508240909')
+        .then((res)=> res.json())
+        .then((data)=>{ setWeather(data) });
+    });
 
 
     return(
@@ -18,14 +25,14 @@ function Weather(){
               placeholder="Enter city name..."
             />
             <button className="btn btn-primary" type="submit">
-              Search
+              Search 
             </button>
           </form>
 
-          
-            <div className="text-center">
+          { weather ? 
+          (<div className="text-center">
               <h3>City Name, Country</h3>
-              <h1>20°C</h1>
+              <h1>{weather.current.temp_c}°C</h1>
               <p className="text-capitalize">clear sky</p>
               <img
                 src="https://openweathermap.org/img/wn/01d@2x.png"
@@ -35,7 +42,13 @@ function Weather(){
                 <p>Humidity: 10%</p>
                 <p>Wind: 5 m/s</p>
               </div>
-            </div>
+            </div>) 
+          : 
+          (<p>Loading!!</p>)
+          }
+
+          
+            
 
 
         </div>
