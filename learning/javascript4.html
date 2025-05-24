@@ -50,15 +50,29 @@
 
         function setList() {
 
-            let menu = [
-                "Burger",
-                "Fries",
-                "Momos",
-                "PinaColada",
-                "Steak",
-                "Mojito"
 
-            ];
+            let menu =[
+                {
+                    name:"Pizza",
+                    size:"Small",
+                    price:"650"
+                },
+                {
+                    name:"Pasta",
+                    size:"Full",
+                    price:"999"
+                }
+            ]
+
+            // let menu = [
+            //     "Burger",
+            //     "Fries",
+            //     "Momos",
+            //     "PinaColada",
+            //     "Steak",
+            //     "Mojito"
+
+            // ];
 
             let list = document.getElementById('list');
 
@@ -67,7 +81,7 @@
             //  }
 
             menu.map(food=>{
-                list.innerHTML += `<li>${food}</li>`;
+                list.innerHTML += `<li>${food.name}</li>`;
             });
 
 
