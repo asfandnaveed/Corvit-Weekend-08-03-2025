@@ -31,15 +31,15 @@ function Weather(){
 
           { weather ? 
           (<div className="text-center">
-              <h3>City Name, Country</h3>
+              <h3>{weather.location.name}, {weather.location.country}</h3>
               <h1>{weather.current.temp_c}°C</h1>
-              <p className="text-capitalize">clear sky</p>
+              <p className="text-capitalize">{weather.current.condition.text}</p>
               <img
                 src="https://openweathermap.org/img/wn/01d@2x.png"
                 alt="Weather Icon"
               />
               <div className="mt-3">
-                <p>Humidity: 10%</p>
+                <p>Humidity: {weather.current.humidity}%</p>
                 <p>Wind: 5 m/s</p>
               </div>
             </div>) 
